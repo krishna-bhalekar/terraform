@@ -1,0 +1,15 @@
+---
+-name: installing the ngnix
+    host: all
+    become: true
+    task:
+      -name: Install NGINX
+      package:
+        name: NGINX 
+        state: present
+      -name: start NGINX
+      service:
+        name: NGINX
+        state: started
+        enabled: yes
+---
